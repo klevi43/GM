@@ -1,0 +1,98 @@
+:root {
+  font-size: 62.5%;
+  line-height: 1.5;
+  font-weight: 400;
+
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: local("Jost"), url("./fonts/Jost.ttf") format("truetype");
+}
+
+body {
+  margin: 0 0;
+  font-family: "Jost";
+}
+
+button {
+  background: none;
+  border: none;
+}
+ul {
+  padding-left: 0;
+}
+
+a {
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: #c9c9c9;
+  transition: 0.15s;
+}
+.collapsible--hidden {
+  display: none;
+}
+.collapsible--expanded  {
+  display: block;
+}
+
+
+/*  Lists */
+.list {
+  list-style: none;
+  
+}
+
+
+.nav {
+  padding: 1rem;
+  width: auto;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav__list {
+  width: 100%;
+  
+}
+
+.nav__item > a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px  #fff;
+}
+
+.nav__toggle {
+  color: white;
+  height: 40px;
+  width: 40px;
+}
+
+
+
+
+
+.hero {
+  margin: 0 0;
+  border: 1px solid white;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Logo */
+
+.logo {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3rem;
+}
