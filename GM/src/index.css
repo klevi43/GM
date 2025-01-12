@@ -23,6 +23,7 @@ button {
   border: none;
 }
 ul {
+  margin: 0;
   padding-left: 0;
 }
 
@@ -30,14 +31,20 @@ a {
   font-size: 2.5rem;
   text-decoration: none;
   color: #c9c9c9;
-  transition: 0.15s;
+  transition: 0.3s;
 }
 .collapsible--hidden {
-  display: none;
+  height: 0;
+  transition: 0.15s;
+  overflow: hidden;
+  
+  
 }
 .collapsible--expanded  {
-  display: block;
-}
+  height: 12rem;
+  transition: 0.3s;
+  overflow: hidden;
+  }
 
 
 /*  Lists */
@@ -48,6 +55,7 @@ a {
 
 
 .nav {
+  position: relative;
   padding: 1rem;
   width: auto;
   background-color: black;
@@ -55,6 +63,7 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .nav__list {
