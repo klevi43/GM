@@ -16,12 +16,16 @@ function App() {
   }
   return (
     <>
+      
       <Nav 
       isNavMenuOpen={isNavMenuOpen} 
       toggleNavBar={toggleNavBar}
       isLoggedIn={isLoggedIn}/>
-      <div className='hero' ><div>text</div><div>image</div></div>
-    </>
+      <div className='hero' ><header><h2 className='heading'>Creating the best version of yourself starts today</h2><p className='subheading'>Creating the best version of yourself starts today.</p></header><div>image</div></div>
+      <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam odio iure sunt magni quos reiciendis labore provident repellat, voluptatibus veniam. Laudantium earum quis consectetur nemo vero nobis illo sunt ab! Tempore, temporibus. Modi voluptatem fugit quibusdam cupiditate quia, nemo error est amet, ut distinctio, reprehenderit rerum sapiente rem esse ab!</p></div>
+
+      
+      </>
   )
 }
 

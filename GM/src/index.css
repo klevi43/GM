@@ -37,6 +37,9 @@ a {
 
 /* containers */
 .container__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   background-color: black;
 }
@@ -55,13 +58,24 @@ a {
   }
 
   
+  /* headers */
+  .heading {
+    font-size: 3rem;
+  }
 
+  .subheading {
+    font-size: 3rem;
+    color: #acacac;
+  }
 /*  Lists */
 .list {
   list-style: none;
   
 }
 
+/* links */
+
+/* navbar */
 
 .nav {
   max-width: 1280px;
@@ -79,9 +93,12 @@ a {
 }
 
 .nav__item > a:hover {
+  position: relative;
   color: #fff;
-  text-shadow: 0 0 10px  #fff;
+  text-shadow: 0 0 10px #fff;
 }
+
+
 
 .nav__toggle {
   color: white;
@@ -108,8 +125,10 @@ a {
 
 
 .hero {
-  margin: 0 0;
+  margin: 7rem auto 0 auto;
   border: 1px solid white;
+  height: 400px;
+  font-size: 8rem;
 }
 
 @media screen and (min-width: 768px) {

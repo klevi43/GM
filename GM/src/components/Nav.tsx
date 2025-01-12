@@ -18,9 +18,11 @@ const Nav = ({isNavMenuOpen, toggleNavBar, isLoggedIn}: Props) => {
         <button onClick={toggleNavBar} className='nav__toggle'><img src={Lines} alt="" /></button>
     
       <ul className={`list nav__list ${isNavMenuOpen ? "collapsible--expanded" : "collapsible--hidden"}`}>
-          {!isLoggedIn && <li className='nav__item'><a href="">Login</a></li>}
+          {!isLoggedIn && <li className='nav__item'><a href="">Login</a>
+          <div className='underline'></div></li>}
+          
           {isLoggedIn && <li className='nav__item'><a href="">Logout</a></li>}
-          <li className='nav__item'><a href="">My Workouts</a></li>  
+          <li className='nav__item'><a href="">My Workouts</a><div className='underline'></div></li>  
         </ul> 
       </nav>  
     </div>
