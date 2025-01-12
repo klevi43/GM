@@ -31,7 +31,7 @@ ul {
 a {
   font-size: 2.5rem;
   text-decoration: none;
-  color: #c9c9c9;
+  color: #acacac;
   transition: 0.3s;
 }
 
@@ -125,4 +125,5 @@ a {
   font-weight: 900;
   font-style: italic;
   font-size: 3rem;
+  color: #fff;
 }
