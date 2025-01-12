@@ -11,7 +11,7 @@ const Nav = ({isNavMenuOpen, toggleNavBar}: Props) => {
   <> 
     
       <nav className='nav'>
-        <div><a className='logo' href="">GM</a></div>
+        <a className='logo' href="">GM</a>
         <button onClick={toggleNavBar} className='nav__toggle'><img src={Lines} alt="" /></button>
     
       <ul className={`list nav__list ${isNavMenuOpen ? "collapsible--expanded" : "collapsible--hidden"}`}>
