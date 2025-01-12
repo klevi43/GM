@@ -10,7 +10,7 @@ interface Props {
 const Nav = ({isNavMenuOpen, toggleNavBar, isLoggedIn}: Props) => {
   return (
   <> 
-    <div  className='container__nav'>
+    <div className='nav__container'>
 
     
       <nav className='nav'>
@@ -19,7 +19,7 @@ const Nav = ({isNavMenuOpen, toggleNavBar, isLoggedIn}: Props) => {
     
       <ul className={`list nav__list ${isNavMenuOpen ? "collapsible--expanded" : "collapsible--hidden"}`}>
           {!isLoggedIn && <li className='nav__item'><a href="">Login</a>
-          <div className='underline'></div></li>}
+          </li>}
           
           {isLoggedIn && <li className='nav__item'><a href="">Logout</a></li>}
           <li className='nav__item'><a href="">My Workouts</a><div className='underline'></div></li>  
