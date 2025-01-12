@@ -7,12 +7,19 @@ import Nav from './components/Nav'
 
 function App() {
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
   const toggleNavBar = () => {
     setIsNavMenuOpen(!isNavMenuOpen);
   }
   return (
     <>
-      <Nav isNavMenuOpen={isNavMenuOpen} toggleNavBar={toggleNavBar}/>
+      <Nav 
+      isNavMenuOpen={isNavMenuOpen} 
+      toggleNavBar={toggleNavBar}
+      isLoggedIn={isLoggedIn}/>
       <div className='hero' ><div>text</div><div>image</div></div>
     </>
   )
