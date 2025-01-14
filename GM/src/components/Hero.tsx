@@ -14,7 +14,7 @@ const Hero = ({images}: Props) => {
           
           <img className='hero__image' 
           srcSet={`${images[0]} 768w, ${images[1]}, 1024w`}
-          sizes='(max-width: 768px) 768px, (max-width: 1024px) 1024px' 
+          sizes='(min-width: 768px) 768px, (min-width: 1024px) 1024px' 
           alt="a person doing a pullup" />
         </div>
       </div>

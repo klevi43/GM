@@ -7,6 +7,7 @@ import Pullup from './assets/images/Pullup.jpg'
 import PullupDesktop from './assets/images/Pullup-desktop.jpg'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import About from './components/About'
 
 function App() {
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ function App() {
       toggleNavBar={toggleNavBar}
       isLoggedIn={isLoggedIn}/>
       <Hero images={images}/>
-        
+      <About />
       
       </>
   )
