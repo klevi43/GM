@@ -4,8 +4,6 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import './fonts/Jost.ttf'
 
-import Hero from './components/Hero'
-import About from './components/About'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Home from './pages/Home'
 import Login from './pages/Login'

@@ -4,7 +4,9 @@ import Home from './Home'
 const Login = () => {
   return (
     <>
-      <div>
+
+      <div className='form__container'>
+        
         <header>
           <h1 className='heading'>Login</h1>
         </header>
@@ -18,10 +20,13 @@ const Login = () => {
               <h2>Password</h2>
               <input type='text' name='password' />
             </label>
-            <Link to="/">Cancel</Link>
-            <button className='btn btn--primary' role='submit'>submit</button>
-          </form>
+            <div>
+              <Link to="/">Cancel</Link>
+              <button className='btn btn--primary' role='submit'>submit</button>
+            </div>
+          </form> 
         </div>
+        <div><p>Not a member?<Link to='/signup'>Sign up</Link></p></div>
       </div>
     </>
   )

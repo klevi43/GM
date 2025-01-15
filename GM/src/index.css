@@ -60,6 +60,7 @@ p {
 
 
 
+
 .collapsible--hidden {
   height: 0;
   transition: 0.15s;
@@ -73,6 +74,15 @@ p {
   overflow: hidden; 
   }
 
+  /* Forms  */
+
+  .form__container {
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+  }
   
   /* headers */
   .heading {
