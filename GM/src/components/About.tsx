@@ -6,7 +6,7 @@ const About = () => {
     <div className='about__container'>
       <h1 className='about__heading'>What is Growth Mindset?</h1>
       <p className='text'>
-        Fitness isn't about being the best. It's about cultivating discipline, setting goals, and acheiving them.
+        Fitness is about cultivating discipline, setting goals, and acheiving them.
         Growth Mindset allows you to effectively log your workouts so that you can see real progress over time.
       </p>
     

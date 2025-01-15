@@ -3,32 +3,27 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import './fonts/Jost.ttf'
-import Pullup from './assets/images/Pullup.jpg'
-import PullupDesktop from './assets/images/Pullup-desktop.jpg'
-import Nav from './components/Nav'
+
 import Hero from './components/Hero'
 import About from './components/About'
+import { BrowserRouter, Route, Routes } from 'react-router'
+import Home from './pages/Home'
+import Login from './pages/Login'
 
 function App() {
-  const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
+  
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const heroImage =  Pullup;
-  const heroImageDesktop = PullupDesktop;
-  const images = [Pullup, PullupDesktop];
-
-  const toggleNavBar = () => {
-    setIsNavMenuOpen(!isNavMenuOpen);
-  }
+  
   return (
     <>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />}/> 
+        <Route path='/login' element={<Login />} />
+      </Routes>
+    </BrowserRouter>
       
-      <Nav 
-      isNavMenuOpen={isNavMenuOpen} 
-      toggleNavBar={toggleNavBar}
-      isLoggedIn={isLoggedIn}/>
-      <Hero images={images}/>
-      <About />
+      
       
       </>
   )

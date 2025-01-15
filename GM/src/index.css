@@ -27,7 +27,7 @@ ul {
   margin: 0;
   padding-left: 0;
 }
-h2 {
+h1, h2 {
   margin: 0;
 }
 p {
@@ -36,7 +36,7 @@ p {
 }
 
 .about__container {
-  margin: 2rem 0;
+  margin: 4rem 0;
   padding: 2rem;
 }
 .about__heading {
