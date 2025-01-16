@@ -2,6 +2,7 @@ import React from 'react'
 
 import Lines from '../assets/svgs/lines.svg'
 import { Link } from 'react-router';
+import Home from '../pages/Home';
 
 interface Props {
   isNavMenuOpen: boolean;
@@ -15,7 +16,7 @@ const Nav = ({isNavMenuOpen, toggleNavBar, isLoggedIn}: Props) => {
 
     
       <nav className='nav'>
-        <a className='logo' href="">GM</a>
+        <Link className='logo' to='/'>GM</Link>
         <button onClick={toggleNavBar} className='nav__toggle'><img src={Lines} alt="" /></button>
     
       <ul className={`list nav__list ${isNavMenuOpen ? "collapsible--expanded" : "collapsible--hidden"}`}>

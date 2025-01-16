@@ -6,6 +6,9 @@
 
   color: rgba(255, 255, 255, 0.87);
   background-color: #000000;
+
+  --color-text: #acacac;
+    
 }
 
 @font-face {
@@ -48,8 +51,10 @@ p {
 .btn {
   margin: 0 0 1rem 0;
   border-radius: 10rem;
-  padding: 1rem;
+  padding: 1.5rem;
   width: fit-content;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 .btn--primary {
@@ -77,13 +82,37 @@ p {
   /* Forms  */
 
   .form__container {
-    border: 2px solid white;
+    /* border: 2px solid white; */
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
+    height: 80vh;
+
+  }
+
+  .form {
+    width: 80%;
+    border: 2px solid pink;
+    padding: 2rem;
   }
   
+
+  .form__heading {
+    margin-bottom: 2rem;
+  }
+
+  .form__btn {
+    margin: 0 3rem;
+  }
+
+  
+.form__label {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #acacac;
+  margin: 0;
+}
   /* headers */
   .heading {
     font-size: 5rem;
@@ -106,6 +135,12 @@ p {
     }
   }
 
+  /* inputs */
+  input {
+    height: 5rem;
+    width: 98%;
+    margin-bottom: 2rem;
+  }
   .image__container {
     height: 100%;
     width: 100%;
@@ -197,8 +232,8 @@ a {
 .hero__image {
   width: 100%;
   margin: 0 auto;
-  
 }
+
 @media screen and (min-width: 768px) {
   .hero {
     display: grid;
@@ -219,6 +254,14 @@ a {
  /* text */
 
 .text {
+  color: var(--color-text);
   font-size: 2.5rem;
   text-indent: 2.5rem;
- }
+}
+
+.center {
+  /* border: 1px solid palegoldenrod; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
