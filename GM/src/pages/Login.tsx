@@ -38,12 +38,11 @@ const Login = () => {
                 <input type='text' name='password' />
               </label>
               <div className='center'>
-                <div>
-                  <Link className='form__btn' to="/">Cancel</Link>
-                  <button className='btn btn--primary form__btn' role='submit'>Submit</button>
-              
+                <div className='btn__container form__submit-container'>
+                  <Link className='' to="/">Cancel</Link>
+                  <button className='btn btn--primary' role='submit'>Submit</button>
                 </div>
-                </div>
+              </div>
             </form> 
           </div>
           <div className='center'><p className='text'>Not a member?<Link className='' to='/signup'>Sign up</Link></p></div>
