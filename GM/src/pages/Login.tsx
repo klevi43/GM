@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router'
+
 import Nav from '../components/Nav'
 import Home from './Home'
 
@@ -39,17 +40,18 @@ const Login = () => {
               </label>
               <div className='center'>
                 <div className='btn__container form__submit-container'>
-                  <Link className='' to="/">Cancel</Link>
+                  <Link className='link text' to="/">Cancel</Link>
                   <button className='btn btn--primary' role='submit'>Submit</button>
                 </div>
               </div>
             </form> 
           </div>
-          <div className='center'><p className='text'>Not a member?<Link className='' to='/signup'>Sign up</Link></p></div>
+          <div className='center signup'><p className='text'>Not a member?<Link className='link signup-link text' to='/signup'>Sign up</Link></p></div>
         
           </div>
+          
         </div>
-    </>
+        </>
   )
 }
 

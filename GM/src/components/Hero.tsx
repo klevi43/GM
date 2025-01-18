@@ -6,9 +6,11 @@ interface Props {
 const Hero = ({images}: Props) => {
   return (
     <>
-      <div className='hero'><header className='hero__header'><h2 className='heading'>Track Your Progress.<br/>See Results.</h2>
+      <div className='hero nav__offset'>
+        
+        <header className='hero__header'><h2 className='heading'>Track Your Progress.<br/>See Results.</h2>
         <p className='subheading'>Creating the best version of yourself starts today.</p>
-        <Link className='btn btn--primary' to='/login'>Get Started</Link></header>
+        <Link className='btn btn--primary link' to='/login'>Get Started</Link></header>
         <div className='image__container'>
           <img className='hero__image' 
           srcSet={`${images[0]} 768w, ${images[1]}, 1024w`}
