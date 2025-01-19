@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 
 import Nav from '../components/Nav'
+import Input from '../components/Input'
 import Home from './Home'
 
 
@@ -14,6 +15,10 @@ const Login = () => {
   const toggleNavBar = () => {
     setIsNavMenuOpen(!isNavMenuOpen);
   }
+
+  const labels:('Email'| 'Password')[] = ['Email', 'Password'];
+
+  const roles:('text' | 'password')[] = ['text', 'password'];
   return (
     <>
       <Nav 
@@ -30,14 +35,10 @@ const Login = () => {
           </header>
           <div>
             <form action='submit'>
-              <label htmlFor='email'>
-                <h2 className='form__label'>Email</h2>
-                <input type="text" name='email' />
-              </label>
-              <label htmlFor="password">
-                <h2 className='form__label'>Password</h2>
-                <input type='text' name='password' />
-              </label>
+            <Input label={labels[0]}
+                    role={roles[0]}/>
+              <Input label={labels[1]}
+                    role={roles[1]}/>
               <div className='center'>
                 <div className='btn__container form__submit-container'>
                   <Link className='link text' to="/">Cancel</Link>
