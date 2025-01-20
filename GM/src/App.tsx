@@ -7,6 +7,7 @@ import './fonts/Jost.ttf'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import Workouts from './pages/Workouts'
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/> 
         <Route path='/login' element={<Login />} />
+        <Route path='/workouts' element={<Workouts />} />
       </Routes>
     </BrowserRouter>
       
