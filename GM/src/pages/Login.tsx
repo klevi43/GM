@@ -27,7 +27,7 @@ const Login = () => {
       isLoggedIn={isLoggedIn}/>
 
       <div className='form__container'>
-        <div className='form'>
+        <div className='form outline'>
 
         
           <header>
