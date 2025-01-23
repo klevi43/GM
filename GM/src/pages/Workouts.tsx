@@ -8,6 +8,7 @@ const Workouts = () => {
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const workoutList: Workout[] = [
     new Workout(0, "Chest Day", new Date(2024, 12, 25)),
     new Workout(1, "Leg Day", new Date(2024, 12, 25)),
@@ -26,7 +27,6 @@ const Workouts = () => {
     const updatedWorkouts = workouts.filter((workout) => id !== workout.id);
     setWorkoutList(updatedWorkouts);
   };
-
   return (
     <>
       <Nav

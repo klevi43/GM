@@ -20,7 +20,7 @@ const WorkoutList = ({ workouts, styles, handleDelete }: Props) => {
           workouts.map((workout) => (
             <li className={styles.li}>
               <div className="space-between">
-                <Link className={styles.link} to="/">
+                <Link className={styles.link} to={`/workouts/${workout.id}`}>
                   <h2>{workout.name}</h2>
                 </Link>
                 <button
