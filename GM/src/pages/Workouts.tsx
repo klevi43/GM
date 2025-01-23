@@ -3,18 +3,22 @@ import Nav from "../components/Nav";
 import { Link } from "react-router";
 import { useState } from "react";
 import Workout from "../models/Workout";
-import WorkoutList from "../components/WorkoutList";
+import List from "../components/List";
 const Workouts = () => {
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const workoutListStyles = {
+    ul: "list",
+    li: "outline workout__list-item",
+    link: "link text",
+  };
   const toggleNavBar = () => {
     setIsNavMenuOpen(!isNavMenuOpen);
   };
   const workouts: Workout[] = [
-    new Workout("Chest Day"),
-    new Workout("Leg Day"),
+    new Workout("Chest Day", new Date(2024, 12, 25)),
+    new Workout("Leg Day", new Date(2024, 12, 25)),
   ];
 
   return (
@@ -29,7 +33,7 @@ const Workouts = () => {
         <h1 className="heading form__heading">My Workouts</h1>
       </header>
       <div className="container">
-        <WorkoutList workouts={workouts} />
+        <List workouts={workouts} styles={workoutListStyles} />
         {/* <ul className="list">
           {workouts.map((workout: Workout) => (
             <li className="outline workout__list-item">
