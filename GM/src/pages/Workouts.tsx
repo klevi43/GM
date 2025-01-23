@@ -3,11 +3,16 @@ import Nav from "../components/Nav";
 import { Link } from "react-router";
 import { useState } from "react";
 import Workout from "../models/Workout";
-import List from "../components/List";
+import List from "../components/WorkoutList";
 const Workouts = () => {
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const workoutList: Workout[] = [
+    new Workout(0, "Chest Day", new Date(2024, 12, 25)),
+    new Workout(1, "Leg Day", new Date(2024, 12, 25)),
+  ];
+  const [workouts, setWorkoutList] = useState(workoutList);
   const workoutListStyles = {
     ul: "list",
     li: "outline workout__list-item",
@@ -16,10 +21,11 @@ const Workouts = () => {
   const toggleNavBar = () => {
     setIsNavMenuOpen(!isNavMenuOpen);
   };
-  const workouts: Workout[] = [
-    new Workout("Chest Day", new Date(2024, 12, 25)),
-    new Workout("Leg Day", new Date(2024, 12, 25)),
-  ];
+
+  const handleDelete = (id: number) => {
+    const updatedWorkouts = workouts.filter((workout) => id !== workout.id);
+    setWorkoutList(updatedWorkouts);
+  };
 
   return (
     <>
@@ -30,10 +36,14 @@ const Workouts = () => {
       />
 
       <header className="nav__offset">
-        <h1 className="heading form__heading">My Workouts</h1>
+        <h1 className="heading">My Workouts</h1>
       </header>
-      <div className="container">
-        <List workouts={workouts} styles={workoutListStyles} />
+      <div className="container workout__container">
+        <List
+          workouts={workouts}
+          styles={workoutListStyles}
+          handleDelete={handleDelete}
+        />
         {/* <ul className="list">
           {workouts.map((workout: Workout) => (
             <li className="outline workout__list-item">

@@ -9,8 +9,9 @@ interface Props {
     li?: string;
     link?: string;
   };
+  handleDelete(id: number): void;
 }
-const WorkoutList = ({ workouts, styles }: Props) => {
+const WorkoutList = ({ workouts, styles, handleDelete }: Props) => {
   return (
     <>
       <ul className={styles.ul}>
@@ -18,17 +19,25 @@ const WorkoutList = ({ workouts, styles }: Props) => {
         {workouts &&
           workouts.map((workout) => (
             <li className={styles.li}>
-              <Link className={styles.link} to="/">
-                <div className="space-between">
+              <div className="space-between">
+                <Link className={styles.link} to="/">
                   <h2>{workout.name}</h2>
-                  <p>{workout.date.toLocaleDateString()}</p>
-                </div>
-                <ul className="list">
+                </Link>
+                <button
+                  onClick={() => handleDelete(workout.id)}
+                  className="btn btn-primary text link"
+                >
+                  X
+                </button>
+              </div>
+              <div className="space-between workout-list__content">
+                <ul className={styles.ul}>
                   <li>Bench Press</li>
                   <li>Pushups</li>
                   <li>...</li>
                 </ul>
-              </Link>
+                <p className="text">{workout.date.toLocaleDateString()}</p>
+              </div>
             </li>
           ))}
       </ul>

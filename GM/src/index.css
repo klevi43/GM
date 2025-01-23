@@ -290,9 +290,18 @@ input {
 }
 
 /* Workouts */
+.workout__container {
+  margin: 0;
+}
 .workout__list-item {
   margin-bottom: 2rem;
   padding: 1rem 2rem;
+}
+.workout-list__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-size: 1.5rem;
 }
 /* Other Styles */
 /* text */
