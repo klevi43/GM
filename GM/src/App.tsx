@@ -11,16 +11,18 @@ import Workouts from "./pages/Workouts";
 import WorkoutExercises from "./pages/WorkoutExercises";
 
 function App() {
-  <>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/workouts" element={<Workouts />} />
-        <Route path={`/workouts/${0}`} element={<WorkoutExercises />} />
-      </Routes>
-    </BrowserRouter>
-  </>;
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/workouts" element={<Workouts />} />
+          <Route path={`/workouts/${0}`} element={<WorkoutExercises />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
 
 export default App;

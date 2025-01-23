@@ -44,23 +44,6 @@ const Workouts = () => {
           styles={workoutListStyles}
           handleDelete={handleDelete}
         />
-        {/* <ul className="list">
-          {workouts.map((workout: Workout) => (
-            <li className="outline workout__list-item">
-              <Link className="link text" to="/">
-                <div className="space-between">
-                  <h2>{workout.name}</h2>
-                  <p>12/25/2025</p>
-                </div>
-                <ul className="list">
-                  <li>Bench Press</li>
-                  <li>Pushups</li>
-                  <li>...</li>
-                </ul>
-              </Link>
-            </li>
-          ))}
-        </ul> */}
       </div>
     </>
   );
