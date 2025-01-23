@@ -1,12 +1,16 @@
+import Exercise from "./Exercise";
+
 class Workout {
   private _id: number;
   private _name: string;
   private _date: Date;
+  private _exercises?: Exercise[];
 
-  constructor(id: number, name: string, date: Date) {
+  constructor(id: number, name: string, date: Date, exercises?: Exercise[]) {
     this._id = id;
     this._name = name;
     this._date = date;
+    this._exercises = exercises;
   }
 
   get id(): number {
