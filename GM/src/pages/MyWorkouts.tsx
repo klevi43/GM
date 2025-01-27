@@ -1,25 +1,35 @@
-import React, { ReactNode } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import Nav from "../components/Nav";
 import { Link } from "react-router";
 import { useState } from "react";
 import Workout from "../models/Workout";
 import List from "../components/WorkoutList";
+
+import useWorkouts from "../hooks/useWorkouts";
+import { UseWorkoutsContextType } from "../context/WorkoutsProvider";
 const Workouts = () => {
-  const workoutList: Workout[] = [
-    new Workout(0, "Chest Day", new Date(2024, 12, 25)),
-    new Workout(1, "Leg Day", new Date(2024, 12, 25)),
-  ];
-  const [workouts, setWorkoutList] = useState(workoutList);
+  // const workoutList: Workout[] = [
+  //   new Workout(0, "Chest Day", new Date(2024, 12, 25)),
+  //   new Workout(1, "Leg Day", new Date(2024, 12, 25)),
+  // ];
+  // const [workouts, setWorkoutList] = useState(workoutList);
   const workoutListStyles = {
     ul: "list",
     li: "outline workout__list-item",
     link: "link text",
   };
 
-  const handleDelete = (id: number) => {
-    const updatedWorkouts = workouts.filter((workout) => id !== workout.id);
-    setWorkoutList(updatedWorkouts);
-  };
+  const { workouts } = useWorkouts();
+  let pageContent: ReactElement | ReactElement[] = <p>Loading...</p>
+  
+  if (workouts?.length) {
+    pageContent = workouts.map( workout => )
+  }
+  
+  // const handleDelete = (id: number) => {
+  //   const updatedWorkouts = workouts.filter((workout) => id !== workout.id);
+  //   setWorkoutList(updatedWorkouts);
+  // };
   return (
     <>
       <Nav />
