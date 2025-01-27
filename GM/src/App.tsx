@@ -7,8 +7,8 @@ import "./fonts/Jost.ttf";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Workouts from "./pages/Workouts";
-import WorkoutExercises from "./pages/WorkoutExercises";
+import MyWorkouts from "./pages/MyWorkouts";
+import MyExercises from "./pages/MyExercises";
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/workouts" element={<Workouts />} />
-          <Route path={`/workouts/${0}`} element={<WorkoutExercises />} />
+          <Route path="/workouts" element={<MyWorkouts />} />
+          <Route path={`/workouts/${0}`} element={<MyExercises />} />
         </Routes>
       </BrowserRouter>
     </>
