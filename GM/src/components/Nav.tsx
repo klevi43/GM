@@ -3,13 +3,15 @@ import React from "react";
 import Lines from "../assets/svgs/lines.svg";
 import { NavLink } from "react-router";
 import Home from "../pages/Home";
+import { useState } from "react";
 
-interface Props {
-  isNavMenuOpen: boolean;
-  isLoggedIn: boolean;
-  toggleNavBar: () => void;
-}
-const Nav = ({ isNavMenuOpen, toggleNavBar, isLoggedIn }: Props) => {
+const Nav = () => {
+  const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const toggleNavBar = () => {
+    setIsNavMenuOpen(!isNavMenuOpen);
+  };
   return (
     <>
       <div className="nav__container">

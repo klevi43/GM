@@ -11,11 +11,7 @@ const MyExercises = () => {
   };
   return (
     <>
-      <Nav
-        isNavMenuOpen={isNavMenuOpen}
-        toggleNavBar={toggleNavBar}
-        isLoggedIn={isLoggedIn}
-      />
+      <Nav />
     </>
   );
 };
