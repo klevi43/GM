@@ -4,23 +4,18 @@ import { Link } from "react-router";
 
 interface Props {
   workouts?: Workout[];
-  styles: {
-    ul?: string;
-    li?: string;
-    link?: string;
-  };
   handleDelete(id: number): void;
 }
-const WorkoutList = ({ workouts, styles, handleDelete }: Props) => {
+const WorkoutList = ({ workouts, handleDelete }: Props) => {
   return (
     <>
-      <ul className={styles.ul}>
+      <ul className="list">
         {!workouts && <p>Nothing to show</p>}
         {workouts &&
           workouts.map((workout) => (
-            <li className={styles.li}>
+            <li className="outline workout__list-item">
               <div className="space-between">
-                <Link className={styles.link} to={`/workouts/${workout.id}`}>
+                <Link className="link text" to={`/workouts/${workout.id}`}>
                   <h2>{workout.name}</h2>
                 </Link>
                 <button
@@ -31,7 +26,7 @@ const WorkoutList = ({ workouts, styles, handleDelete }: Props) => {
                 </button>
               </div>
               <div className="space-between workout-list__content">
-                <ul className={styles.ul}>
+                <ul className="list">
                   <li>Bench Press</li>
                   <li>Pushups</li>
                   <li>...</li>
