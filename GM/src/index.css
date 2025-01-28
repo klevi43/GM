@@ -303,6 +303,9 @@ input {
   align-items: end;
   font-size: 1.5rem;
 }
+.workout-list__date {
+  font-size: 2.5rem;
+}
 /* Other Styles */
 /* text */
 

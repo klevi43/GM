@@ -14,25 +14,28 @@ const WorkoutList = ({ workouts, handleDelete }: Props) => {
         {workouts &&
           workouts.map((workout) => (
             <li className="outline workout__list-item">
-              <div className="space-between">
-                <Link className="link text" to={`/workouts/${workout.id}`}>
+              <Link className="link text" to={`/workouts/${workout.id}`}>
+                <div className="space-between">
                   <h2>{workout.name}</h2>
-                </Link>
-                <button
-                  onClick={() => handleDelete(workout.id)}
-                  className="btn btn-primary text link"
-                >
-                  X
-                </button>
-              </div>
-              <div className="space-between workout-list__content">
-                <ul className="list">
-                  <li>Bench Press</li>
-                  <li>Pushups</li>
-                  <li>...</li>
-                </ul>
-                <p className="text">{workout.date.toLocaleDateString()}</p>
-              </div>
+
+                  <button
+                    onClick={() => handleDelete(workout.id)}
+                    className="btn btn-primary text link"
+                  >
+                    X
+                  </button>
+                </div>
+                <div className="space-between workout-list__content">
+                  <ul className="list">
+                    <li>Bench Press</li>
+                    <li>Pushups</li>
+                    <li>...</li>
+                  </ul>
+                  <p className="workout-list__date">
+                    {workout.date.toLocaleDateString()}
+                  </p>
+                </div>
+              </Link>
             </li>
           ))}
       </ul>
