@@ -16,6 +16,7 @@ const useWorkouts = () => {
     // unique identifier, used for caching
     queryKey: ["id", "name", "date"],
     queryFn: fetchWorkouts,
+    staleTime: 10 * 1000, // 10s
   });
 };
 
