@@ -314,6 +314,10 @@ input {
   font-size: 2.5rem;
   /* text-indent: 2.5rem; */
 }
+/* Errors */
+.text-error {
+  color: #c60000;
+}
 /* Main title */
 .main-title {
   margin-bottom: 3rem;
