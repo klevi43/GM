@@ -18,12 +18,12 @@ const WorkoutList = ({ workouts, error, isLoading, handleDelete }: Props) => {
       )}
       {isLoading && (
         <div className="outline workout__list-item">
-          <p className="text center ">Loading your workouts...</p>
+          <p className="text center">Loading your workouts...</p>
         </div>
       )}
       {error && (
         <div className="outline workout__list-item">
-          <p className="text text-error center ">{error.message}</p>
+          <p className="text text-error center">{error.message}</p>
         </div>
       )}
       <ul className="list">
