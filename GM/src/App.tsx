@@ -3,12 +3,14 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import "./fonts/Jost.ttf";
+// use this to manage and cache data
 
 import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import MyWorkouts from "./pages/MyWorkouts";
 import MyExercises from "./pages/MyExercises";
+import axios from "axios";
 
 function App() {
   return (

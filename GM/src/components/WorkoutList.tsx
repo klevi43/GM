@@ -10,10 +10,10 @@ const WorkoutList = ({ workouts, handleDelete }: Props) => {
   return (
     <>
       <ul className="list">
-        {!workouts && <p>Nothing to show</p>}
+        {!workouts && <p className="text">Nothing to show</p>}
         {workouts &&
           workouts.map((workout) => (
-            <li className="outline workout__list-item">
+            <li key={workout.id} className="outline workout__list-item">
               <Link className="link text" to={`/workouts/${workout.id}`}>
                 <div className="space-between">
                   <h2>{workout.name}</h2>
@@ -32,7 +32,7 @@ const WorkoutList = ({ workouts, handleDelete }: Props) => {
                     <li>...</li>
                   </ul>
                   <p className="workout-list__date">
-                    {workout.date.toLocaleDateString()}
+                    {workout.date.toString()}
                   </p>
                 </div>
               </Link>
