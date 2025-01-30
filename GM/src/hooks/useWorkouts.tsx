@@ -6,15 +6,19 @@ import axios from "axios";
 import Workout from "../models/Workout";
 import { useQuery } from "@tanstack/react-query";
 
-const useWorkouts = () => {
+const useWorkouts = (workoutId: number | undefined) => {
   const fetchWorkouts = () => {
     return axios
-      .get<Workout[]>("http://localhost:3500/workouts")
+      .get<Workout[]>("http://localhost:3500/workouts", {
+        params: {
+          workoutId,
+        },
+      })
       .then((res) => res.data);
   };
   return useQuery<Workout[], Error>({
     // unique identifier, used for caching
-    queryKey: ["id", "name", "date"],
+    queryKey: ["workouts", workoutId],
     queryFn: fetchWorkouts,
     staleTime: 10 * 1000, // 10s
   });

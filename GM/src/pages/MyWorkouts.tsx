@@ -1,10 +1,15 @@
+import { useState } from "react";
 import Nav from "../components/Nav";
 import WorkoutList from "../components/WorkoutList";
 import useWorkouts from "../hooks/useWorkouts";
 
 const MyWorkouts = () => {
-  const { data: workouts, error, isLoading } = useWorkouts();
+  const [workoutId, setWorkoutId] = useState<number>();
 
+  const { data: workouts, error, isLoading } = useWorkouts(workoutId);
+  const handleClick = (workoutId: number) => {
+    setWorkoutId(workoutId);
+  };
   const handleDelete = (id: number) => {
     // const updatedWorkouts = workoutsArr.filter((workout) => id !== workout.id);
     // setWorkoutList(updatedWorkouts);
@@ -21,6 +26,8 @@ const MyWorkouts = () => {
         <WorkoutList
           workouts={workouts}
           error={error}
+          workoutId={workoutId}
+          handleClick={handleClick}
           isLoading={isLoading}
           handleDelete={handleDelete}
         />

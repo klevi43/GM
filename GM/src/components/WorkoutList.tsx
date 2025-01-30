@@ -6,9 +6,18 @@ interface Props {
   workouts?: Workout[];
   error: Error | null;
   isLoading: boolean;
+  workoutId?: number;
+  handleClick(id: number): void;
   handleDelete(id: number): void;
 }
-const WorkoutList = ({ workouts, error, isLoading, handleDelete }: Props) => {
+const WorkoutList = ({
+  workouts,
+  error,
+  isLoading,
+  workoutId,
+  handleClick,
+  handleDelete,
+}: Props) => {
   return (
     <>
       {!error && !isLoading && !workouts && (
@@ -30,7 +39,11 @@ const WorkoutList = ({ workouts, error, isLoading, handleDelete }: Props) => {
         {workouts &&
           workouts.map((workout) => (
             <li key={workout.id} className="outline workout__list-item">
-              <Link className="link text" to={`/workouts/${workout.id}`}>
+              <Link
+                className="link text"
+                onClick={() => handleClick(workout.id)}
+                to={`/workouts/${workoutId}`}
+              >
                 <div className="space-between">
                   <h2>{workout.name}</h2>
                   <button
