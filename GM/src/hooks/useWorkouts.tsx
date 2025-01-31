@@ -9,11 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 const useWorkouts = (workoutId: number | undefined) => {
   const fetchWorkouts = () => {
     return axios
-      .get<Workout[]>("http://localhost:3500/workouts", {
-        params: {
-          workoutId,
-        },
-      })
+      .get<Workout[]>("http://localhost:3500/wor/kouts")
       .then((res) => res.data);
   };
   return useQuery<Workout[], Error>({
