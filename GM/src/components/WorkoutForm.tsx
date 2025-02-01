@@ -2,24 +2,46 @@ import React, { useRef } from "react";
 import { Mutation, useMutation, useQueryClient } from "@tanstack/react-query";
 import Workout from "../models/Workout";
 import axios from "axios";
+interface AddWorkoutContext {
+  previousWorkouts: Workout[];
+}
 const WorkoutForm = () => {
   const queryClient = useQueryClient();
   //           data received from backed, error, data sent to backend
-  const addWorkout = useMutation<Workout, Error, Workout>({
+  const addWorkout = useMutation<Workout, Error, Workout, AddWorkoutContext>({
     mutationFn: (workout: Workout) => {
       return axios
         .post<Workout>("http://localhost:3500/workouts", workout)
         .then((res) => res.data);
     },
     onMutate: (newWorkout: Workout) => {
+      const previousWorkouts =
+        queryClient.getQueryData<Workout[]>(["workouts"]) || [];
       queryClient.setQueryData<Workout[]>(["workouts"], (workouts) => [
         newWorkout,
         ...(workouts || []),
       ]);
       if (ref.current) ref.current.value = "";
+
+      // context obj of previous workouts
+      return { previousWorkouts };
     },
-    onSuccess: (savedWorkout, newWorkout) => {},
-    // APPROACHES: INVALIDATE CACHE, update data in cache directly
+    // savedWorkout: from BE, newWorkout: workout we created
+    onSuccess: (savedWorkout, newWorkout) => {
+      queryClient.setQueryData<Workout[]>(["workouts"], (workouts) =>
+        workouts?.map((workout) =>
+          workout === newWorkout ? savedWorkout : workout
+        )
+      );
+    },
+    onError: (error, newWorkout, context) => {
+      if (!context) return;
+
+      queryClient.setQueryData<Workout[]>(
+        ["workouts"],
+        context.previousWorkouts
+      );
+    },
   });
 
   const ref = useRef<HTMLInputElement>(null);
