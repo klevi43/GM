@@ -32,9 +32,7 @@ const WorkoutForm = () => {
           <input ref={ref} type="text" />
         </div>
         <div>
-          <button disabled={addWorkout.isLoading} className="btn btn--primary">
-            {addWorkout.isLoading ? " Adding..." : "Add"}
-          </button>
+          <button className="btn btn--primary">Add</button>
         </div>
       </form>
     </>

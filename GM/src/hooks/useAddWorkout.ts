@@ -2,6 +2,9 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Workout from "../models/Workout";
 import axios from "axios";
 import { CACHE_KEY_WORKOUTS } from "../constants/constants";
+
+import APIClient from "../services/apiClient";
+const apiClient = new APIClient<Workout>("/workouts");
 interface AddWorkoutContext {
   previousWorkouts: Workout[];
 }
@@ -9,11 +12,7 @@ const useAddWorkout = (onAdd: () => void) => {
   const queryClient = useQueryClient();
   //           data received from backed, error, data sent to backend
   return useMutation<Workout, Error, Workout, AddWorkoutContext>({
-    mutationFn: (workout: Workout) => {
-      return axios
-        .post<Workout>("http://localhost:3500/workouts", workout)
-        .then((res) => res.data);
-    },
+    mutationFn: apiClient.post,
     onMutate: (newWorkout: Workout) => {
       const previousWorkouts =
         queryClient.getQueryData<Workout[]>(CACHE_KEY_WORKOUTS) || [];
