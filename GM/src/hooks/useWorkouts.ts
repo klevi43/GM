@@ -2,14 +2,12 @@ import axios from "axios";
 import Workout from "../models/Workout";
 import { useQuery } from "@tanstack/react-query";
 import { CACHE_KEY_WORKOUTS } from "../constants/constants";
-import APIClient from "../services/apiClient";
-
-const apiClient = new APIClient<Workout>("/workouts");
+import workoutService from "../services/workoutService";
 const useWorkouts = () => {
   return useQuery<Workout[], Error>({
     // unique identifier, used for caching
     queryKey: CACHE_KEY_WORKOUTS,
-    queryFn: apiClient.getAll,
+    queryFn: workoutService.getAll,
     staleTime: 10, // 10s
   });
 };
