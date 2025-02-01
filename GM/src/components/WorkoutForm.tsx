@@ -11,13 +11,15 @@ const WorkoutForm = () => {
         .post<Workout>("http://localhost:3500/workouts", workout)
         .then((res) => res.data);
     },
-
-    onSuccess: (savedWorkout, newWorkout) =>
-      // APPROACHES: INVALIDATE CACHE, update data in cache directly
+    onMutate: (newWorkout: Workout) => {
       queryClient.setQueryData<Workout[]>(["workouts"], (workouts) => [
-        savedWorkout,
+        newWorkout,
         ...(workouts || []),
-      ]),
+      ]);
+      if (ref.current) ref.current.value = "";
+    },
+    onSuccess: (savedWorkout, newWorkout) => {},
+    // APPROACHES: INVALIDATE CACHE, update data in cache directly
   });
 
   const ref = useRef<HTMLInputElement>(null);
