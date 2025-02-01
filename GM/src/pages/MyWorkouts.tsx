@@ -7,11 +7,8 @@ import WorkoutForm from "../components/WorkoutForm";
 const MyWorkouts = () => {
   const [workoutId, setWorkoutId] = useState<number>();
 
-  const { data: workouts, error, isLoading } = useWorkouts(workoutId);
-  console.log(workouts);
-  const handleClick = (workoutId: number) => {
-    setWorkoutId(workoutId);
-  };
+  const { data: workouts, error, isLoading } = useWorkouts();
+
   const handleDelete = (id: number) => {
     // const updatedWorkouts = workoutsArr.filter((workout) => id !== workout.id);
     // setWorkoutList(updatedWorkouts);
@@ -29,7 +26,6 @@ const MyWorkouts = () => {
           workouts={workouts}
           error={error}
           workoutId={workoutId}
-          handleClick={handleClick}
           isLoading={isLoading}
           handleDelete={handleDelete}
         />
