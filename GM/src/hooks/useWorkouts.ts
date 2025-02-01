@@ -5,6 +5,7 @@ import { UseWorkoutsContextType } from "../context/WorkoutsProvider";
 import axios from "axios";
 import Workout from "../models/Workout";
 import { useQuery } from "@tanstack/react-query";
+import { CACHE_KEY_WORKOUTS } from "../constants/constants";
 
 const useWorkouts = () => {
   const fetchWorkouts = () => {
@@ -14,7 +15,7 @@ const useWorkouts = () => {
   };
   return useQuery<Workout[], Error>({
     // unique identifier, used for caching
-    queryKey: ["workouts"],
+    queryKey: CACHE_KEY_WORKOUTS,
     queryFn: fetchWorkouts,
     staleTime: 10, // 10s
   });
