@@ -4,7 +4,8 @@ import Workout from "../models/Workout";
 import axios from "axios";
 const WorkoutForm = () => {
   const queryClient = useQueryClient();
-  const addWorkout = useMutation({
+  //           data received from backed, error, data sent to backend
+  const addWorkout = useMutation<Workout, Error, Workout>({
     mutationFn: (workout: Workout) => {
       return axios
         .post<Workout>("http://localhost:3500/workouts", workout)
@@ -13,12 +14,18 @@ const WorkoutForm = () => {
     onSuccess: (savedWorkout, newWorkout) =>
       // APPROACHES: INVALIDATE CACHE, update data in cache directly
       queryClient.setQueryData<Workout[]>(["workouts"], (workouts) => [
+        savedWorkout,
         ...(workouts || []),
       ]),
   });
   const ref = useRef<HTMLInputElement>(null);
   return (
     <>
+      {addWorkout.error && (
+        <div className="outline workout__list-item">
+          <p className="text text-error center">{addWorkout.error.message}</p>
+        </div>
+      )}
       <form
         action=""
         onSubmit={(event) => {
