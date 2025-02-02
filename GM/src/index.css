@@ -289,6 +289,10 @@ input {
   justify-content: space-between;
 }
 
+/* tables */
+.table {
+  width: 100%;
+}
 /* Workouts */
 .workout__container {
   margin: 0;
