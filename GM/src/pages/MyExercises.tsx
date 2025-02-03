@@ -6,14 +6,14 @@ const MyExercises = () => {
     <>
       <Nav />
       <header className="nav__offset">
-        <h1 className="heading">WORKOUT TITLE</h1>
+        <h1 className="heading heading__workout">Chest Day</h1>
       </header>
-      <div className="container outline">
+      <div className="container table__container ">
         <div className="">
-          <h2 className="subheading">EXERCISE TITLE</h2>
+          <h2 className="subheading table__exercise">Bench Press</h2>
         </div>
         <div className="">
-          <table className="outline table">
+          <table className="table">
             <tr className="">
               <th className="table__column-heading">Set</th>
               <th className="table__column-heading">Weight</th>
@@ -30,11 +30,58 @@ const MyExercises = () => {
                 </button>
               </td>
             </tr>
+            <tr>
+              <td className="table__item table__column-value">2</td>
+              <td className="table__item table__column-value">20</td>
+              <td className="table__item table__column-value">8</td>
+              <td className="table__item">
+                <button>
+                  <img className="trash-icon" src={TrashCan} alt="" />
+                </button>
+              </td>
+            </tr>
           </table>
         </div>
-        <div>
-          <button className="btn btn--primary">Add</button>
-          <button className="btn btn--primary">Delete</button>
+        <div className="table__btn-container">
+          <button className="btn btn--primary table__btn">Add Set</button>
+        </div>
+      </div>
+      <div className="container table__container ">
+        <div className="">
+          <h2 className="subheading table__exercise">Bench Press</h2>
+        </div>
+        <div className="">
+          <table className="table">
+            <tr className="">
+              <th className="table__column-heading">Set</th>
+              <th className="table__column-heading">Weight</th>
+              <th className="table__column-heading">Reps</th>
+              <th></th>
+            </tr>
+            <tr className="table--underline">
+              <td className="table__item table__column-value">1</td>
+              <td className="table__item table__column-value">15</td>
+              <td className="table__item table__column-value">12</td>
+              <td className="table__item">
+                <button>
+                  <img className="trash-icon" src={TrashCan} alt="" />
+                </button>
+              </td>
+            </tr>
+            <tr className="">
+              <td className="table__item table__column-value">2</td>
+              <td className="table__item table__column-value">20</td>
+              <td className="table__item table__column-value">8</td>
+              <td className="table__item">
+                <button>
+                  <img className="trash-icon" src={TrashCan} alt="" />
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div className="table__btn-container">
+          <button className="btn btn--primary table__btn">Add Set</button>
         </div>
       </div>
     </>
