@@ -310,10 +310,10 @@ input {
   text-align: center;
 }
 .table__column-heading {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 .table__column-value {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 /* Workouts */
