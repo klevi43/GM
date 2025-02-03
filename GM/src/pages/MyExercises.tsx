@@ -15,14 +15,14 @@ const MyExercises = () => {
         <div className="">
           <table className="outline table">
             <tr className="">
-              <th className="">Set</th>
+              <th>Set</th>
               <th>Weight</th>
               <th>Reps</th>
             </tr>
             <tr>
-              <td className="table-item">1</td>
-              <td className="table-item">15</td>
-              <td className="table-item">12</td>
+              <td className="table__item">1</td>
+              <td className="table__item">15</td>
+              <td className="table__item">12</td>
             </tr>
           </table>
         </div>
