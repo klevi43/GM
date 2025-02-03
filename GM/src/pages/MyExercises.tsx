@@ -43,7 +43,7 @@ const MyExercises = () => {
           </table>
         </div>
         <div className="table__btn-container">
-          <button className="btn btn--primary table__btn">Add Set</button>
+          <button className="btn btn--outline table__btn">Add Set</button>
         </div>
       </div>
       <div className="container table__container ">
@@ -81,8 +81,11 @@ const MyExercises = () => {
           </table>
         </div>
         <div className="table__btn-container">
-          <button className="btn btn--primary table__btn">Add Set</button>
+          <button className="btn btn--outline table__btn">Add Set</button>
         </div>
+      </div>
+      <div className="table__btn-container">
+        <button className="btn btn--primary table__btn">Add Exercise</button>
       </div>
     </>
   );

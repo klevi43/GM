@@ -66,6 +66,13 @@ p {
   font-weight: 500;
 }
 
+.btn--outline {
+  background-color: var(--color-background);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
 .collapsible--hidden {
   height: 0;
   transition: 0.15s;
@@ -315,7 +322,7 @@ input {
 }
 
 .table__exercise {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-left: 0.5rem;
 }
 
