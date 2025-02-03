@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Nav from "../components/Nav";
-
+import TrashCan from "../assets/svgs/trashcan-svgrepo-com.svg";
 const MyExercises = () => {
   return (
     <>
@@ -15,14 +15,20 @@ const MyExercises = () => {
         <div className="">
           <table className="outline table">
             <tr className="">
-              <th>Set</th>
-              <th>Weight</th>
-              <th>Reps</th>
+              <th className="table__column-heading">Set</th>
+              <th className="table__column-heading">Weight</th>
+              <th className="table__column-heading">Reps</th>
+              <th></th>
             </tr>
             <tr>
-              <td className="table__item">1</td>
-              <td className="table__item">15</td>
-              <td className="table__item">12</td>
+              <td className="table__item table__column-value">1</td>
+              <td className="table__item table__column-value">15</td>
+              <td className="table__item table__column-value">12</td>
+              <td className="table__item">
+                <button>
+                  <img className="trash-icon" src={TrashCan} alt="" />
+                </button>
+              </td>
             </tr>
           </table>
         </div>

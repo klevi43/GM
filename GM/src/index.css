@@ -150,6 +150,12 @@ p {
   }
 }
 
+/* Icons */
+.trash-icon {
+  height: 4rem;
+  width: 3rem;
+  color: #fff;
+}
 /* inputs */
 input {
   height: 5rem;
@@ -161,6 +167,7 @@ input {
   width: 100%;
   display: flex;
 }
+
 /*  Lists */
 .list {
   list-style: none;
@@ -290,6 +297,7 @@ input {
 }
 
 /* tables */
+
 .table {
   width: 100%;
 }
@@ -301,6 +309,13 @@ input {
 .table__item {
   text-align: center;
 }
+.table__column-heading {
+  font-size: 3rem;
+}
+.table__column-value {
+  font-size: 3rem;
+}
+
 /* Workouts */
 .workout__container {
   margin: 0;
