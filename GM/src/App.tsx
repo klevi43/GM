@@ -20,7 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/workouts" element={<MyWorkouts />} />
-          <Route path={`/workouts/${0}`} element={<MyExercises />} />
+          <Route path={"/workouts/:id"} element={<MyExercises />} />
         </Routes>
       </BrowserRouter>
     </>

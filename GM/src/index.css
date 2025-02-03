@@ -293,6 +293,14 @@ input {
 .table {
   width: 100%;
 }
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.table-item {
+  text-align: center;
+}
 /* Workouts */
 .workout__container {
   margin: 0;

@@ -12,17 +12,17 @@ const MyExercises = () => {
         <div className="">
           <h2 className="subheading">EXERCISE TITLE</h2>
         </div>
-        <div className="center">
+        <div className="">
           <table className="outline table">
-            <tr className="space-between">
-              <th>Set</th>
+            <tr className="">
+              <th className="">Set</th>
               <th>Weight</th>
               <th>Reps</th>
             </tr>
-            <tr className="space-between">
-              <td>1</td>
-              <td>15</td>
-              <td>12</td>
+            <tr>
+              <td className="table-item">1</td>
+              <td className="table-item">15</td>
+              <td className="table-item">12</td>
             </tr>
           </table>
         </div>
