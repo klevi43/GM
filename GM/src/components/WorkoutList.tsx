@@ -49,9 +49,9 @@ const WorkoutList = ({
                 </div>
                 <div className="space-between workout-list__content">
                   <ul className="list">
-                    <li>Bench Press</li>
-                    <li>Pushups</li>
-                    <li>...</li>
+                    {workout.exercises?.map((exercise) => (
+                      <li key={exercise.id}> {exercise.name}</li>
+                    ))}
                   </ul>
                   <p className="workout-list__date">
                     {workout.date.toString()}

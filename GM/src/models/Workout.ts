@@ -3,6 +3,8 @@
 //   private _name: string;
 //   private _date: Date;
 
+import Exercise from "./Exercise";
+
 //   constructor(id: number, name: string, date: Date) {
 //     this._id = id;
 //     this._name = name;
@@ -40,5 +42,6 @@ interface Workout {
   id: number;
   name: string;
   date: Date;
+  exercises?: Exercise[];
 }
 export default Workout;
