@@ -1,6 +1,7 @@
 import React from "react";
 import Workout from "../models/Workout";
 import { Link } from "react-router";
+import WorkoutListItem from "./WorkoutListItem";
 
 interface Props {
   workouts?: Workout[];
@@ -36,29 +37,12 @@ const WorkoutList = ({
       <ul className="list">
         {workouts &&
           workouts.map((workout) => (
-            <li key={workout.id} className="outline workout__list-item">
-              <Link className="link text" to={`/workouts/${workoutId}`}>
-                <div className="space-between">
-                  <h2>{workout.name}</h2>
-                  <button
-                    onClick={() => handleDelete(workout.id)}
-                    className="btn btn-primary text link"
-                  >
-                    X
-                  </button>
-                </div>
-                <div className="space-between workout-list__content">
-                  <ul className="list">
-                    {workout.exercises?.map((exercise) => (
-                      <li key={exercise.id}> {exercise.name}</li>
-                    ))}
-                  </ul>
-                  <p className="workout-list__date">
-                    {workout.date.toString()}
-                  </p>
-                </div>
-              </Link>
-            </li>
+            <WorkoutListItem
+              workoutId={workout.id}
+              workoutName={workout.name}
+              workoutDate={workout.date}
+              exercises={workout.exercises}
+            />
           ))}
       </ul>
     </>
