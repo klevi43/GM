@@ -21,6 +21,23 @@
           "date": "2024-12-25"
         }
       ]
+    },
+    {
+      "id": "4",
+      "name": "Back Day",
+      "date": "2024-12-25",
+      "exercises": [
+        {
+          "id": 5,
+          "name": "Bent Rows",
+          "date": "2024-12-25"
+        },
+        {
+          "id": 6,
+          "name": "Lat Pulldowns",
+          "date": "2024-12-25"
+        }
+      ]
     }
   ]
 }

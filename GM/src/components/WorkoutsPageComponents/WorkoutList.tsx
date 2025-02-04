@@ -38,6 +38,7 @@ const WorkoutList = ({
         {workouts &&
           workouts.map((workout) => (
             <WorkoutListItem
+              key={workout.id}
               workoutId={workout.id}
               workoutName={workout.name}
               workoutDate={workout.date}

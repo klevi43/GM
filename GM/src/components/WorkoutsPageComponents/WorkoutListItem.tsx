@@ -25,6 +25,7 @@ const WorkoutListItem = ({
           </div>
           <div className="space-between workout-list__content">
             <ExerciseListPreview exercises={exercises} />
+
             <p className="workout-list__date">{workoutDate.toString()}</p>
           </div>
         </Link>
