@@ -1,7 +1,8 @@
 import React from "react";
-import Workout from "../models/Workout";
-import Exercise from "../models/Exercise";
+import Workout from "../../models/Workout";
+import Exercise from "../../models/Exercise";
 import { Link } from "react-router";
+import ExerciseListPreview from "./ExercisePreview";
 interface Props {
   workoutId: number;
   workoutName: string;
@@ -23,11 +24,7 @@ const WorkoutListItem = ({
             <button className="btn btn-primary text link">X</button>
           </div>
           <div className="space-between workout-list__content">
-            <ul className="list">
-              {exercises?.map((exercise) => (
-                <li key={exercise.id}> {exercise.name}</li>
-              ))}
-            </ul>
+            <ExerciseListPreview exercises={exercises} />
             <p className="workout-list__date">{workoutDate.toString()}</p>
           </div>
         </Link>

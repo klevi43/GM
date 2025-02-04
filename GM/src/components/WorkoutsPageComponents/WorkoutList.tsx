@@ -1,5 +1,5 @@
 import React from "react";
-import Workout from "../models/Workout";
+import Workout from "../../models/Workout";
 import { Link } from "react-router";
 import WorkoutListItem from "./WorkoutListItem";
 
