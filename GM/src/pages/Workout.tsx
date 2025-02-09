@@ -20,11 +20,16 @@ const Workout = () => {
       <Nav />
       <WorkoutTitle name={workout?.name} />
       {exercises?.map((exercise) => (
-        <div key={exercise.id}>
-          <ExerciseTitle name={exercise.name} />
-          <ExerciseTable sets={exercise.sets} exerciseId={exercise.id} />
-        </div>
+        <>
+          <div className="container table__container" key={exercise.id}>
+            <ExerciseTitle name={exercise.name} />
+            <ExerciseTable sets={exercise.sets} exerciseId={exercise.id} />
+          </div>
+        </>
       ))}
+      <div className="table__btn-container">
+        <button className="btn btn--primary table__btn">Add Exercise</button>
+      </div>
       <div className="container table__container ">
         <div className="">
           <h2 className="subheading table__exercise">Bench Press</h2>
