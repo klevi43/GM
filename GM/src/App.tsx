@@ -9,9 +9,9 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import MyWorkouts from "./pages/MyWorkouts";
-import MyExercises from "./pages/WorkoutExercises";
+import MyExercises from "./pages/Workout";
 import axios from "axios";
-import WorkoutExercises from "./pages/WorkoutExercises";
+import MyWorkout from "./pages/Workout";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/workouts" element={<MyWorkouts />} />
-          <Route path={"/workouts/:id"} element={<WorkoutExercises />} />
+          <Route path={"/workouts/:id"} element={<MyWorkout />} />
         </Routes>
       </BrowserRouter>
     </>

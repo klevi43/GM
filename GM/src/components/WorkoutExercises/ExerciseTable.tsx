@@ -6,7 +6,7 @@ const ExerciseTable = () => {
     <>
       <table className="table">
         <tr className="">
-          <th className="table__column-heading">setHeading</th>
+          <th className="table__column-heading">Set No</th>
           <th className="table__column-heading">Weight</th>
           <th className="table__column-heading">Reps</th>
           <th></th>

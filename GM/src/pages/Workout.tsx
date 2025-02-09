@@ -3,30 +3,13 @@ import Nav from "../components/Nav";
 import TrashCan from "../assets/svgs/trashcan-svgrepo-com.svg";
 import ExerciseTitle from "../components/WorkoutExercises/ExerciseTitle";
 import ExerciseTable from "../components/WorkoutExercises/ExerciseTable";
+import useWorkout from "../hooks/useWorkout";
+import { useParams } from "react-router";
 
-const WorkoutExercises = () => {
-  // change this to useContext
-  const exercise1 = {
-    name: "Bench Press",
-    date: new Date(),
-    sets: [
-      { no: 1, weight: 50, reps: 8 },
-      { no: 2, weight: 30, reps: 12 },
-      { no: 3, weight: 40, reps: 10 },
-    ],
-  };
-  const exercise2 = {
-    name: "Chest Press",
-    date: new Date(),
-    sets: [
-      { no: 1, weight: 50, reps: 8 },
-      { no: 2, weight: 30, reps: 12 },
-      { no: 3, weight: 40, reps: 10 },
-    ],
-  };
-
-  const exercises = [exercise1, exercise2];
-
+const Workout = () => {
+  const { id } = useParams();
+  const { data: workout, isLoading, error } = useWorkout(id!);
+  console.log(workout);
   return (
     <>
       <Nav />
@@ -34,13 +17,6 @@ const WorkoutExercises = () => {
         <h1 className="heading heading__workout">Chest Day</h1>
       </header>
       <div className="container table__container ">
-        {exercises.map((exercise) => (
-          <>
-            <ExerciseTitle title={exercise.name} />
-            <ExerciseTable />
-          </>
-        ))}
-
         <div className="">
           <tr>
             <td className="table__item table__column-value">2</td>
@@ -102,4 +78,4 @@ const WorkoutExercises = () => {
   );
 };
 
-export default WorkoutExercises;
+export default Workout;
