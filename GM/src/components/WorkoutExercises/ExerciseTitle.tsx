@@ -4,9 +4,9 @@ interface Props {
 }
 const ExerciseTitle = ({ name }: Props) => {
   return (
-    <div>
+    <>
       <h2 className="subheading table__exercise">{name}</h2>
-    </div>
+    </>
   );
 };
 
