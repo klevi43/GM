@@ -16,23 +16,7 @@ const Workout = () => {
       <header className="nav__offset">
         <h1 className="heading heading__workout">Chest Day</h1>
       </header>
-      <div className="container table__container ">
-        <div className="">
-          <tr>
-            <td className="table__item table__column-value">2</td>
-            <td className="table__item table__column-value">20</td>
-            <td className="table__item table__column-value">8</td>
-            <td className="table__item">
-              <button>
-                <img className="trash-icon" src={TrashCan} alt="" />
-              </button>
-            </td>
-          </tr>
-        </div>
-        <div className="table__btn-container">
-          <button className="btn btn--outline table__btn">Add Set</button>
-        </div>
-      </div>
+
       <div className="container table__container ">
         <div className="">
           <h2 className="subheading table__exercise">Bench Press</h2>
