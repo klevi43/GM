@@ -1,11 +1,11 @@
 import React from "react";
 interface Props {
-  title: string;
+  name: string | undefined;
 }
-const ExerciseTitle = ({ title }: Props) => {
+const ExerciseTitle = ({ name }: Props) => {
   return (
     <div>
-      <h2 className="subheading table__exercise">{title}</h2>
+      <h2 className="subheading table__exercise">{name}</h2>
     </div>
   );
 };

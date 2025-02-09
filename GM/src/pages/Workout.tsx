@@ -5,18 +5,21 @@ import ExerciseTitle from "../components/WorkoutExercises/ExerciseTitle";
 import ExerciseTable from "../components/WorkoutExercises/ExerciseTable";
 import useWorkout from "../hooks/useWorkout";
 import { useParams } from "react-router";
+import WorkoutTitle from "../components/WorkoutExercises/WorkoutTitle";
+import Exercise from "../models/Exercise";
 
 const Workout = () => {
   const { id } = useParams();
   const { data: workout, isLoading, error } = useWorkout(id!);
   console.log(workout);
+  const exercises: Exercise[] | undefined = workout?.exercises;
   return (
     <>
       <Nav />
-      <header className="nav__offset">
-        <h1 className="heading heading__workout">Chest Day</h1>
-      </header>
-
+      <WorkoutTitle name={workout?.name} />
+      {exercises?.map((exercise) => (
+        <ExerciseTitle name={exercise.name} />
+      ))}
       <div className="container table__container ">
         <div className="">
           <h2 className="subheading table__exercise">Bench Press</h2>

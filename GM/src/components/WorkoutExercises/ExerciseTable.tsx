@@ -1,7 +1,10 @@
 import React from "react";
 import TrashCan from "../../assets/svgs/trashcan-svgrepo-com.svg";
-
-const ExerciseTable = () => {
+import Workout from "../../models/Workout";
+interface Props {
+  sets: Set[];
+}
+const ExerciseTable = ({ set }: Props) => {
   return (
     <>
       <table className="table">
