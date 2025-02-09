@@ -23,32 +23,36 @@ const Workout = () => {
         </div>
         <div className="">
           <table className="table">
-            <tr className="">
-              <th className="table__column-heading">Set</th>
-              <th className="table__column-heading">Weight</th>
-              <th className="table__column-heading">Reps</th>
-              <th></th>
-            </tr>
-            <tr className="table--underline">
-              <td className="table__item table__column-value">1</td>
-              <td className="table__item table__column-value">15</td>
-              <td className="table__item table__column-value">12</td>
-              <td className="table__item">
-                <button>
-                  <img className="trash-icon" src={TrashCan} alt="" />
-                </button>
-              </td>
-            </tr>
-            <tr className="">
-              <td className="table__item table__column-value">2</td>
-              <td className="table__item table__column-value">20</td>
-              <td className="table__item table__column-value">8</td>
-              <td className="table__item">
-                <button>
-                  <img className="trash-icon" src={TrashCan} alt="" />
-                </button>
-              </td>
-            </tr>
+            <thead>
+              <tr className="">
+                <th className="table__column-heading">Set</th>
+                <th className="table__column-heading">Weight</th>
+                <th className="table__column-heading">Reps</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="table--underline">
+                <td className="table__item table__column-value">1</td>
+                <td className="table__item table__column-value">15</td>
+                <td className="table__item table__column-value">12</td>
+                <td className="table__item">
+                  <button>
+                    <img className="trash-icon" src={TrashCan} alt="" />
+                  </button>
+                </td>
+              </tr>
+              <tr className="">
+                <td className="table__item table__column-value">2</td>
+                <td className="table__item table__column-value">20</td>
+                <td className="table__item table__column-value">8</td>
+                <td className="table__item">
+                  <button>
+                    <img className="trash-icon" src={TrashCan} alt="" />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div className="table__btn-container">
