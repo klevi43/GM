@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Nav from "../components/Nav";
 import TrashCan from "../assets/svgs/trashcan-svgrepo-com.svg";
 import ExerciseTitle from "../components/WorkoutExercises/ExerciseTitle";
-import ExerciseTable from "../components/WorkoutExercises/ExerciseTable";
+import SetTable from "../components/WorkoutExercises/SetTable";
 import useWorkout from "../hooks/useWorkout";
 import { useParams } from "react-router";
 import WorkoutTitle from "../components/WorkoutExercises/WorkoutTitle";
 import Exercise from "../models/Exercise";
 import Set from "../models/Set";
+import ExerciseEntry from "../components/WorkoutExercises/ExerciseEntry";
 
 const Workout = () => {
   const { id } = useParams();
@@ -20,12 +21,11 @@ const Workout = () => {
       <Nav />
       <WorkoutTitle name={workout?.name} />
       {exercises?.map((exercise) => (
-        <>
-          <div className="container table__container" key={exercise.id}>
-            <ExerciseTitle name={exercise.name} />
-            <ExerciseTable sets={exercise.sets} exerciseId={exercise.id} />
-          </div>
-        </>
+        <ExerciseEntry
+          key={exercise.id}
+          name={exercise.name}
+          sets={exercise.sets}
+        />
       ))}
       <div className="table__btn-container">
         <button className="btn btn--primary table__btn">Add Exercise</button>

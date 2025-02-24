@@ -2,21 +2,20 @@ import React from "react";
 import TrashCan from "../../assets/svgs/trashcan-svgrepo-com.svg";
 import Workout from "../../models/Workout";
 import Set from "../../models/Set";
-import ExerciseTableHead from "./ExerciseTableHead";
+import SetTableHead from "./SetTableHead";
 interface Props {
   sets: Set[] | undefined;
-  exerciseId: number | undefined;
 }
-const ExerciseTable = ({ sets, exerciseId }: Props) => {
+const ExerciseTable = ({ sets }: Props) => {
   return (
     <>
       <div>
-        <table className="table" key={exerciseId}>
-          <ExerciseTableHead />
+        <table className="table">
+          <SetTableHead />
           <tbody>
             {sets?.map((set, no = 0) => (
-              <>
-                <tr key={set.id}>
+              <React.Fragment key={set.id}>
+                <tr>
                   <td className="table__item table__column-value">{++no}</td>
                   <td className="table__item table__column-value">
                     {set.weight}
@@ -30,7 +29,7 @@ const ExerciseTable = ({ sets, exerciseId }: Props) => {
                     </button>
                   </td>
                 </tr>
-              </>
+              </React.Fragment>
             ))}
           </tbody>
         </table>
