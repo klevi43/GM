@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Nav from "../components/Nav";
 import WorkoutList from "../components/WorkoutsPageComponents/WorkoutList";
-import useWorkouts from "../hooks/useWorkouts";
+import useWorkouts from "../hooks/useWorkouts2";
 import WorkoutForm from "../components/WorkoutForm";
 
 const MyWorkouts = () => {
   const [workoutId, setWorkoutId] = useState<number>();
 
   const { data: workouts, error, isLoading } = useWorkouts();
+  console.log(workouts);
 
   const handleDelete = (id: number) => {
     // const updatedWorkouts = workoutsArr.filter((workout) => id !== workout.id);

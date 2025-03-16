@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Workout from "../models/Workout";
 import axios from "axios";
 import { CACHE_KEY_WORKOUTS } from "../constants/constants";
-import workoutService from "../services/workoutService";
+import workoutService from "../services/MOSHworkoutService";
 
 interface AddWorkoutContext {
   previousWorkouts: Workout[];
