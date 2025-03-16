@@ -15,6 +15,7 @@ const WorkoutListItem = ({
   workoutDate,
   exercises,
 }: Props) => {
+  console.log(workoutName);
   return (
     <>
       <li key={workoutId} className="outline workout__list-item">

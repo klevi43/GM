@@ -20,6 +20,7 @@ const WorkoutList = ({
   workoutId,
   handleDelete,
 }: Props) => {
+  console.log(workouts);
   return (
     <>
       {!error && !isLoading && !workouts && <IsEmptyMessage />}
@@ -33,7 +34,7 @@ const WorkoutList = ({
               workoutId={workout.id}
               workoutName={workout.name}
               workoutDate={workout.date}
-              exercises={workout.exercises}
+              exercises={workout.exerciseDtos}
             />
           ))}
       </ul>

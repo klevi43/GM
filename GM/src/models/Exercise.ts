@@ -4,7 +4,7 @@ interface Exercise {
   id: number;
   name: string;
   workoutId: number;
-  sets?: Set[];
+  setsDtos?: Set[];
 }
 
 export default Exercise;

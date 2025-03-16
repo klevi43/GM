@@ -4,6 +4,6 @@ interface Workout {
   id: number;
   name: string;
   date: Date;
-  exercises?: Exercise[];
+  exerciseDtos?: Exercise[];
 }
 export default Workout;
