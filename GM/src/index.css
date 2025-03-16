@@ -40,7 +40,7 @@ p {
 
 .container {
   margin: 4rem 0;
-  padding: 2rem;
+  padding: 1rem 2rem;
 }
 .about__heading {
   text-align: center;
@@ -50,6 +50,7 @@ p {
 .about__body {
   text-indent: 2.5rem;
 }
+
 /* buttons */
 .btn {
   margin: 0 0 1rem 0;
@@ -65,7 +66,9 @@ p {
   color: #000;
   font-weight: 500;
 }
-
+.btn--wide {
+  width: 100%;
+}
 .btn--outline {
   background-color: var(--color-background);
   border: 2px solid var(--color-primary);
@@ -146,6 +149,10 @@ p {
 .heading--dark {
   color: var(--color-box-outline);
   text-align: center;
+}
+
+.heading__my-workout {
+  padding-left: 1rem;
 }
 
 .subheading {
@@ -372,6 +379,9 @@ input {
 .text-error {
   color: #c60000;
 }
+.text--small {
+  font-size: 2rem;
+}
 /* Main title */
 .main-title {
   margin-bottom: 3rem;
@@ -392,5 +402,11 @@ input {
   /* border: 1px solid palegoldenrod; */
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.end {
+  display: flex;
+  justify-content: end;
   align-items: center;
 }

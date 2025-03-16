@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Workout from "../../models/Workout";
 import { Link } from "react-router";
 import WorkoutListItem from "./WorkoutListItem";
@@ -13,6 +13,7 @@ interface Props {
   workoutId?: number;
   handleDelete(id: number): void;
 }
+
 const WorkoutList = ({
   workouts,
   error,
@@ -20,7 +21,6 @@ const WorkoutList = ({
   workoutId,
   handleDelete,
 }: Props) => {
-  console.log(workouts);
   return (
     <>
       {!error && !isLoading && !workouts && <IsEmptyMessage />}

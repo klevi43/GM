@@ -13,8 +13,7 @@ import ExerciseEntry from "../components/SingleWorkoutPageComponents/ExerciseEnt
 const Workout = () => {
   const { id } = useParams();
   const { data: workout, isLoading, error } = useWorkout(id!);
-  console.log(workout);
-  const exercises: Exercise[] | undefined = workout?.exercises;
+  const exercises: Exercise[] | undefined = workout?.exerciseDtos;
 
   return (
     <>
@@ -24,12 +23,9 @@ const Workout = () => {
         <ExerciseEntry
           key={exercise.id}
           name={exercise.name}
-          sets={exercise.sets}
+          sets={exercise.setDtos}
         />
       ))}
-      <div className="table__btn-container">
-        <button className="btn btn--primary table__btn">Add Exercise</button>
-      </div>
       <div className="container table__container ">
         <div className="">
           <h2 className="subheading table__exercise">Bench Press</h2>

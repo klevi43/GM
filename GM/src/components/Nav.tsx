@@ -14,12 +14,12 @@ const Nav = () => {
   };
   return (
     <>
-      <div className="nav__container">
+      <div className={"nav__container"}>
         <nav className="nav">
           <NavLink className="logo" to="/">
             GM<span className="logo-desktop">Growth Mindset</span>
           </NavLink>
-          <button onClick={toggleNavBar} className="nav__toggle">
+          <button onClick={toggleNavBar} className={"nav__toggle"}>
             <img src={Lines} alt="" />
           </button>
 
