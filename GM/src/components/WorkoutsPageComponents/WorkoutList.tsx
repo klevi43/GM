@@ -2,6 +2,9 @@ import React from "react";
 import Workout from "../../models/Workout";
 import { Link } from "react-router";
 import WorkoutListItem from "./WorkoutListItem";
+import ErrorMessage from "../Messages/ErrorMessage";
+import IsLoadingMessage from "../Messages/IsLoadingMessage";
+import IsEmptyMessage from "../Messages/IsEmptyMessage";
 
 interface Props {
   workouts?: Workout[];
@@ -19,21 +22,9 @@ const WorkoutList = ({
 }: Props) => {
   return (
     <>
-      {!error && !isLoading && !workouts && (
-        <div>
-          <p className="text center">Nothing to show</p>
-        </div>
-      )}
-      {isLoading && (
-        <div className="outline workout__list-item">
-          <p className="text center">Loading your workouts...</p>
-        </div>
-      )}
-      {error && (
-        <div className="outline workout__list-item">
-          <p className="text text-error center">{error.message}</p>
-        </div>
-      )}
+      {!error && !isLoading && !workouts && <IsEmptyMessage />}
+      {isLoading && <IsLoadingMessage />}
+      {error && <ErrorMessage msg={error.message} />}
       <ul className="list">
         {workouts &&
           workouts.map((workout) => (

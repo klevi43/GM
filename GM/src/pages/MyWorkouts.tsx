@@ -8,7 +8,6 @@ const MyWorkouts = () => {
   const [workoutId, setWorkoutId] = useState<number>();
 
   const { data: workouts, error, isLoading } = useWorkouts();
-  console.log(workouts);
 
   const handleDelete = (id: number) => {
     // const updatedWorkouts = workoutsArr.filter((workout) => id !== workout.id);
