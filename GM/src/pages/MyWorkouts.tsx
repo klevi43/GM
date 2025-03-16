@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Nav from "../components/Nav";
 import WorkoutList from "../components/MyWorkoutsPageComponents/WorkoutList";
-import useWorkouts from "../hooks/useWorkouts2";
+import useWorkouts from "../hooks/useWorkouts";
 import WorkoutForm from "../components/WorkoutForm";
 
 const MyWorkouts = () => {
