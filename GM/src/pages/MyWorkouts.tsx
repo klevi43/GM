@@ -26,8 +26,10 @@ const MyWorkouts = () => {
       {/* <WorkoutForm /> */}
 
       <div className="container workout__container">
-        <ShowAddWorkoutFormButton showFormHandler={showFormHandler} />
-        {showForm && <AddWorkoutForm />}
+        {!showForm && (
+          <ShowAddWorkoutFormButton showFormHandler={showFormHandler} />
+        )}
+        {showForm && <AddWorkoutForm showFormHandler={showFormHandler} />}
         <WorkoutList
           workouts={workouts}
           error={error}

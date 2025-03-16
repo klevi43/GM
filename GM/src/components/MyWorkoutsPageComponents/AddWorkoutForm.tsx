@@ -1,6 +1,8 @@
 import React from "react";
-
-const AddWorkoutForm = () => {
+interface Props {
+  showFormHandler(): void;
+}
+const AddWorkoutForm = ({ showFormHandler }: Props) => {
   return (
     <>
       <div className="outline form__container">
@@ -21,7 +23,9 @@ const AddWorkoutForm = () => {
           </div>
 
           <div className="form__submit-container">
-            <button className="btn text btn--empty">Cancel</button>
+            <button className="btn text btn--empty" onClick={showFormHandler}>
+              Cancel
+            </button>
             <button className="btn btn--primary">Submit</button>
           </div>
         </form>
