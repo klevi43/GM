@@ -79,6 +79,7 @@ input {
 }
 
 .btn--empty {
+  color: var(--color-text);
   font-weight: 400;
 }
 .collapsible--hidden {
