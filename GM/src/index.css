@@ -95,7 +95,7 @@ input {
 /* Forms  */
 
 .form__container {
-  /* border: 2px solid white; */
+  border: 2px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,9 +125,9 @@ input {
 .form__submit-container {
   /* border: 1px solid aqua; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 70%;
+  width: 100%;
 }
 
 .form__label {
