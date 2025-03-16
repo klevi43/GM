@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Nav from "../components/Nav";
-import WorkoutList from "../components/WorkoutsPageComponents/WorkoutList";
+import WorkoutList from "../components/MyWorkoutsPageComponents/WorkoutList";
 import useWorkouts from "../hooks/useWorkouts2";
 import WorkoutForm from "../components/WorkoutForm";
 
