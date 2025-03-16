@@ -9,9 +9,9 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import MyWorkouts from "./pages/MyWorkouts";
-import MyExercises from "./pages/Workout";
+import MyExercises from "./pages/SingleWorkout";
 import axios from "axios";
-import MyWorkout from "./pages/Workout";
+import MyWorkout from "./pages/SingleWorkout";
 
 function App() {
   return (

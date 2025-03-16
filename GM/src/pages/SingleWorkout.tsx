@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Nav from "../components/Nav";
 import TrashCan from "../assets/svgs/trashcan-svgrepo-com.svg";
-import ExerciseTitle from "../components/WorkoutExercises/ExerciseTitle";
-import SetTable from "../components/WorkoutExercises/SetTable";
+import ExerciseTitle from "../components/SingleWorkoutPageComponents/ExerciseTitle";
+import SetTable from "../components/SingleWorkoutPageComponents/SetTable";
 import useWorkout from "../hooks/useWorkout";
 import { useParams } from "react-router";
-import WorkoutTitle from "../components/WorkoutExercises/WorkoutTitle";
+import WorkoutTitle from "../components/SingleWorkoutPageComponents/WorkoutTitle";
 import Exercise from "../models/Exercise";
 import Set from "../models/Set";
-import ExerciseEntry from "../components/WorkoutExercises/ExerciseEntry";
+import ExerciseEntry from "../components/SingleWorkoutPageComponents/ExerciseEntry";
 
 const Workout = () => {
   const { id } = useParams();
