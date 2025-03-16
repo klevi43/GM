@@ -4,17 +4,19 @@ import WorkoutList from "../components/MyWorkoutsPageComponents/WorkoutList";
 import useWorkouts from "../hooks/useWorkouts";
 import WorkoutForm from "../components/WorkoutForm";
 import Button from "../components/Button";
+import ShowAddWorkoutFormButton from "../components/MyWorkoutsPageComponents/ShowAddWorkoutFormButton";
+import AddWorkoutForm from "../components/MyWorkoutsPageComponents/AddWorkoutForm";
 
 const MyWorkouts = () => {
   const [workoutId, setWorkoutId] = useState<number>();
 
   const { data: workouts, error, isLoading } = useWorkouts();
+  const [showForm, setShowForm] = useState(false);
 
-  const handleDelete = (id: number) => {
-    // const updatedWorkouts = workoutsArr.filter((workout) => id !== workout.id);
-    // setWorkoutList(updatedWorkouts);
+  const showFormHandler = () => {
+    setShowForm(!showForm);
+    console.log(showForm);
   };
-
   return (
     <>
       <Nav />
@@ -24,17 +26,13 @@ const MyWorkouts = () => {
       {/* <WorkoutForm /> */}
 
       <div className="container workout__container">
-        <div className="center">
-          <button className="btn btn--primary btn--wide text--small">
-            Add New Workout
-          </button>
-        </div>
+        <ShowAddWorkoutFormButton showFormHandler={showFormHandler} />
+        {showForm && <AddWorkoutForm />}
         <WorkoutList
           workouts={workouts}
           error={error}
           workoutId={workoutId}
           isLoading={isLoading}
-          handleDelete={handleDelete}
         />
       </div>
     </>

@@ -22,7 +22,7 @@ const Login = () => {
     <>
       <Nav />
 
-      <div className="form__container">
+      <div className="form__container form__login">
         <div className="form outline">
           <header>
             <h1 className="heading form__heading">Login</h1>

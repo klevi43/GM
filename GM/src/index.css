@@ -37,7 +37,9 @@ p {
   margin: 0;
   padding: 0;
 }
-
+input {
+  width: 1px;
+}
 .container {
   margin: 4rem 0;
   padding: 1rem 2rem;
@@ -76,6 +78,9 @@ p {
   font-weight: 500;
 }
 
+.btn--empty {
+  font-weight: 400;
+}
 .collapsible--hidden {
   height: 0;
   transition: 0.15s;
@@ -95,6 +100,11 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 1.5rem 1.5rem 2rem 1.5rem;
+}
+
+.form__login {
+  margin: 0;
   height: 70vh;
 }
 
@@ -176,8 +186,8 @@ p {
 }
 /* inputs */
 input {
-  height: 5rem;
-  width: 98%;
+  height: 4rem;
+  width: 100%;
   margin-bottom: 2rem;
 }
 .image__container {

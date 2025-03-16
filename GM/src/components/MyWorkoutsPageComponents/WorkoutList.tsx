@@ -11,16 +11,9 @@ interface Props {
   error: Error | null;
   isLoading: boolean;
   workoutId?: number;
-  handleDelete(id: number): void;
 }
 
-const WorkoutList = ({
-  workouts,
-  error,
-  isLoading,
-  workoutId,
-  handleDelete,
-}: Props) => {
+const WorkoutList = ({ workouts, error, isLoading, workoutId }: Props) => {
   return (
     <>
       {!error && !isLoading && !workouts && <IsEmptyMessage />}
