@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import Workout from "../models/Workout";
 import { API_URL } from "../constants/constants";
 import axiosInstance from "./axiosInstance";
-
+import { WorkoutFormData } from "../components/MyWorkoutsPageComponents/AddWorkoutForm";
 class WorkoutService {
   private endpoint: string;
 
@@ -16,9 +16,9 @@ class WorkoutService {
       .then((res) => res.data);
   };
 
-  createWorkout = async (workout: Workout) => {
+  createWorkout = async (newWorkout: WorkoutFormData) => {
     return await axiosInstance
-      .post<Workout>(this.endpoint + "/create", workout)
+      .post<Workout>(this.endpoint + "/create", newWorkout)
       .then((res) => res.data)
       .catch((err) => console.log(err));
   };
