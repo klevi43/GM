@@ -1,8 +1,4 @@
 import React, { FormEvent, useRef } from "react";
-import Workout from "../../models/Workout";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import workoutService from "../../services/workoutService";
-import { CACHE_KEY_WORKOUTS } from "../../constants/constants";
 import { WorkoutFormData } from "../../models/WorkoutFormData";
 import useAddWorkout from "../../hooks/useAddWorkout";
 
@@ -11,7 +7,7 @@ interface Props {
 }
 
 const AddWorkoutForm = ({ showFormHandler }: Props) => {
-  // TODO: Clean this up
+  // TODO: See if there is anything else we can clean up
 
   const workoutNameRef = useRef<HTMLInputElement>(null);
   const workoutDateRef = useRef<HTMLInputElement>(null);
@@ -24,6 +20,8 @@ const AddWorkoutForm = ({ showFormHandler }: Props) => {
       date: workoutDateRef.current?.value,
     };
     addWorkout.mutate(data);
+    // remove form handler
+    showFormHandler();
   }
   return (
     <>
