@@ -3,37 +3,27 @@ import Workout from "../../models/Workout";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import workoutService from "../../services/workoutService";
 import { CACHE_KEY_WORKOUTS } from "../../constants/constants";
+import { WorkoutFormData } from "../../models/WorkoutFormData";
+import useAddWorkout from "../../hooks/useAddWorkout";
 
 interface Props {
   showFormHandler(): void;
 }
-export interface WorkoutFormData {
-  name: string | undefined;
-  date: string | undefined;
-}
+
 const AddWorkoutForm = ({ showFormHandler }: Props) => {
+  // TODO: Clean this up
+
   const workoutNameRef = useRef<HTMLInputElement>(null);
   const workoutDateRef = useRef<HTMLInputElement>(null);
-  const queryClient = useQueryClient();
-
-  const { mutateAsync } = useMutation(workoutService.createWorkout, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(CACHE_KEY_WORKOUTS);
-    },
-  });
-
+  const addWorkout = useAddWorkout(() => {});
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault(); // prevents rerender
-
-    console.log(workoutNameRef.current?.value);
-    console.log(workoutDateRef.current?.value);
 
     const data: WorkoutFormData = {
       name: workoutNameRef.current?.value,
       date: workoutDateRef.current?.value,
     };
-    mutateAsync(data);
-    console.log(typeof workoutDateRef.current?.value);
+    addWorkout.mutate(data);
   }
   return (
     <>
