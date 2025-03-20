@@ -3,6 +3,9 @@ import Workout from "../../models/Workout";
 import Exercise from "../../models/Exercise";
 import { Link } from "react-router";
 import ExerciseListPreview from "./ExercisePreview";
+import TrashCan from "../../assets/svgs/trashcan-svgrepo-com.svg";
+import useDeleteWorkout from "../../hooks/useDeleteWorkout";
+
 interface Props {
   workoutId: number;
   workoutName: string;
@@ -15,21 +18,27 @@ const WorkoutListItem = ({
   workoutDate,
   exercises,
 }: Props) => {
-  console.log(workoutName);
+  const deleteWorkoutMutation = useDeleteWorkout();
+  function handleDelete() {
+    deleteWorkoutMutation.mutate(workoutId);
+  }
+
   return (
     <>
       <li key={workoutId} className="outline workout__list-item">
-        <Link className="link text" to={`/workouts/${workoutId}`}>
-          <div className="space-between">
+        <div className="space-between">
+          <Link className="link text" to={`/workouts/${workoutId}`}>
             <h2>{workoutName}</h2>
-            <button className="btn btn-primary text link">X</button>
-          </div>
-          <div className="space-between workout-list__content">
-            <ExerciseListPreview exercises={exercises} />
+          </Link>
+          <button className="btn btn--delete text" onClick={handleDelete}>
+            X
+          </button>
+        </div>
+        <div className="space-between workout-list__content">
+          <ExerciseListPreview exercises={exercises} />
 
-            <p className="workout-list__date">{workoutDate.toString()}</p>
-          </div>
-        </Link>
+          <p className="workout-list__date">{workoutDate.toString()}</p>
+        </div>
       </li>
     </>
   );

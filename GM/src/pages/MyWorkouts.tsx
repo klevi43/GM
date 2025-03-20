@@ -15,7 +15,6 @@ const MyWorkouts = () => {
 
   const showFormHandler = () => {
     setShowForm(!showForm);
-    console.log(showForm);
   };
   return (
     <>
